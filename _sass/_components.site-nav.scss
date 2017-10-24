@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #SITE-NAV
+   ========================================================================== */
+
+.c-site-nav {
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    padding: $unit;
+    width: 100%;
+}
+
+    .c-site-nav__logo {
+        margin: 0 auto;
+        height: 40px;
+        vertical-align: middle;
+    }

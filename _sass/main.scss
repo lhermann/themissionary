@@ -1,0 +1,334 @@
+/* ==========================================================================
+   INUITCSS
+   ========================================================================== */
+
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Config...............Project-level configuration and feature switches.
+ * Core.................inuitcss’ core and setup settings.
+ * Global...............Project-wide variables and settings.
+ *
+ * TOOLS
+ * Rem..................Tools for converting pixel inputs into their rem
+ *                      equivalents.
+ * Font-size............A mixin which guarantees baseline-friendly line-heights.
+ * Clearfix.............Micro clearfix mixin.
+ * Hidden...............Mixin for hiding elements.
+ * Sass MQ..............inuitcss’ default media query manager.
+ *
+ * GENERIC
+ * Box-sizing...........Better default `box-sizing`.
+ * Normalize.css........A level playing field using @necolas’ Normalize.css.
+ * Reset................A tiny reset to complement Normalize.css.
+ * Shared...............Sensibly and tersely share some global commonalities
+ *                      (particularly useful when managing vertical rhythm).
+ *
+ * ELEMENTS
+ * Page.................Set up our document’s default `font-size` and
+ *                      `line-height`.
+ * Headings.............Very minimal (i.e. only font-size information) for
+ *                      headings 1 through 6.
+ * Images...............Base image styles.
+ * Tables...............Simple table styles.
+ *
+ * OBJECTS
+ * Wrapper..............Page constraint object.
+ * Layout...............Generic layout module.
+ * Media................Image- and text-like content side by side. The
+ *                      poster-child of OOCSS.
+ * Flag.................Table-layout-based advancement on the Media object.
+ * List-bare............Lists with no bullets or indents.
+ * List-inline..........A list whose items all site in a line.
+ * Box..................Simple boxing abstraction.
+ * Block................Image-on-top-of-text object.
+ * Ratio................A container for maintaining aspect ratio of content.
+ * Crop.................Provide a cropping context for media (images, etc.).
+ * Tables...............Classes for manipulating `table`s.
+ * Pack.................Pack items into available horizontal space.
+ *
+ * COMPONENTS
+ * Buttons..............An example button component, and how it fits into the
+ *                      inuitcss framework.
+ *
+ * UTILITIES
+ * Clearfix.............Bind our clearfix onto a utility class.
+ * Widths...............Simple width helper classes.
+ * Headings.............Reassigning our heading styles to helper classes.
+ * Spacing..............Nudge bits of the DOM around with these spacing
+ *                      classes.
+ * Print................Reset-like styles taken from the HTML5 Boilerplate.
+ * Hide.................Helper classes to hide content
+ */
+
+// SETTINGS
+
+$inuit-global-font-size:    18px;
+$inuit-global-line-height:  27px;
+
+@import "settings.config";
+@import "../node_modules/inuitcss/settings/settings.core";
+@import "settings.global";
+@import "settings.colors";
+
+/* Bodytext font */
+$font-body: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+/* Font for headings */
+$font-headings: 'Kalam', cursive;
+
+/* Spacing Units */
+$unit-tiny:     $inuit-global-spacing-unit-tiny;
+$unit-small:    $inuit-global-spacing-unit-small;
+$unit:          $inuit-global-spacing-unit;
+$unit-large:    $inuit-global-spacing-unit-large;
+$unit-huge:     $inuit-global-spacing-unit-huge;
+
+
+
+// TOOLS
+@import "../node_modules/inuitcss/tools/tools.font-size";
+@import "../node_modules/inuitcss/tools/tools.clearfix";
+@import "../node_modules/inuitcss/tools/tools.hidden";
+@import "../node_modules/sass-mq/mq";
+@import "tools.clothoid";
+
+
+
+
+
+// GENERIC
+@import "../node_modules/inuitcss/generic/generic.box-sizing";
+@import "../node_modules/inuitcss/generic/generic.normalize";
+@import "../node_modules/inuitcss/generic/generic.reset";
+@import "../node_modules/inuitcss/generic/generic.shared";
+
+
+
+// ELEMENTS
+@import "elements.wordpress";
+@import "../node_modules/inuitcss/elements/elements.page";
+@import "elements.headings";
+@import "../node_modules/inuitcss/elements/elements.images";
+@import "../node_modules/inuitcss/elements/elements.tables";
+
+html {
+    text-rendering: optimizelegibility;
+    color: $c-text;
+    font-family: $font-body;
+    -webkit-font-smoothing: antialiased;
+
+    @include mq($until: tablet) {
+        font-size: 1em;
+    }
+}
+
+body {
+    overflow-x: hidden;
+}
+
+h1,
+h2 {
+    font-family: $font-headings;
+}
+
+a {
+    transition: color $global-transition ease;
+    text-decoration: none;
+    color: $c-accent;
+
+    &:hover {
+        text-decoration: none;
+        color: #000;
+    }
+}
+
+hr {
+    margin: $unit-large 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+blockquote {
+    border-left: 5px solid $c-border;
+    padding: $unit-tiny $unit;
+
+    p {
+        color: $c-gray-7;
+        font-style: italic;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+figure {
+    text-align: center;
+
+    figcaption {
+        margin-top: $unit-tiny;
+        padding: 0 $unit;
+        color: $c-textmuted;
+        font-size: 85%;
+    }
+}
+
+
+
+// OBJECTS
+//
+// Uncomment and add to this section as necessary.
+@import "../node_modules/inuitcss/objects/objects.wrapper";
+@import "../node_modules/inuitcss/objects/objects.layout";
+@import "../node_modules/inuitcss/objects/objects.media";
+@import "../node_modules/inuitcss/objects/objects.flag";
+@import "../node_modules/inuitcss/objects/objects.list-bare";
+@import "../node_modules/inuitcss/objects/objects.list-inline";
+@import "../node_modules/inuitcss/objects/objects.box";
+@import "../node_modules/inuitcss/objects/objects.block";
+@import "../node_modules/inuitcss/objects/objects.ratio";
+@import "../node_modules/inuitcss/objects/objects.crop";
+@import "../node_modules/inuitcss/objects/objects.pack";
+
+.o-wrapper--wide {
+    max-width: 1420px;
+}
+
+.o-wrapper--flush {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+// @include mq($until: tablet) {
+//     .o-layout--reverse\@mobile {
+//       direction: rtl;
+//     }
+// }
+
+
+// COMPONENTS
+//
+// Build and include your project’s UI Compoments here.
+@import "components.wordpress";
+@import "components.site-nav";
+@import "components.site-cover";
+@import "components.site-footer";
+@import "components.nav-list";
+@import "components.mobile-nav";
+@import "components.article";
+@import "components.buttons";
+@import "components.figure";
+@import "components.category-list";
+@import "components.links";
+@import "components.featherlight";
+@import "components.avatar";
+
+.o-crop__content {
+    max-height: 100%;
+}
+
+.c-info {
+    background-color: $c-gray-1;
+    color: $c-gray-7;
+
+    &--primary {
+        background-color: $c-primary-lighter;
+        color: $c-primary-darker;
+    }
+
+    &--secondary {
+        background-color: $c-secondary-lighter;
+        color: $c-secondary-darker;
+    }
+
+    &--tertiary {
+        background-color: $c-tertiary-lighter;
+        color: $c-tertiary-darker;
+    }
+
+    &--black {
+        background-color: $c-gray-8;
+        color: $c-gray-2;
+    }
+}
+
+    .c-info__head {
+        border-bottom: 1px solid $c-white;
+    }
+
+
+
+// UTILITIES
+@import "../node_modules/inuitcss/utilities/utilities.clearfix";
+@import "../node_modules/inuitcss/utilities/utilities.widths";
+@import "../node_modules/inuitcss/utilities/utilities.headings";
+@import "utilities.responsive-spacings";
+@import "../node_modules/inuitcss/utilities/utilities.print";
+@import "utilities.orientation";
+@import "utilities.hide";
+// @import "utilities.icons";
+@import "utilities.text-align";
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+.u-text {
+    color: $c-text;
+}
+
+.u-muted {
+    color: $c-textmuted;
+}
+
+.u-lead {
+    font-size: 120%;
+}
+
+.u-thin {
+    font-weight: 400;
+}
+
+.u-zoom {
+    transition: transform $global-transition ease, box-shadow $global-transition ease;
+    box-shadow: 0 0 #000;
+    cursor: zoom-in;
+
+    &.is-zoomed {
+        transform: scale(1.3);
+        box-shadow: $global-shadow;
+        cursor: zoom-out;
+    }
+
+    &--2x.is-zoomed {
+        transform: scale(2);
+    }
+
+    &--3x.is-zoomed {
+        transform: scale(3);
+    }
+
+    &--right {
+        transform-origin: center right;
+    }
+
+    &--left {
+        transform-origin: center left;
+    }
+}
+
+.u-float-right {
+    float: right;
+}
+
+.u-z1 {
+    position: relative;
+    z-index: 1;
+}
+
+.u-z2 {
+    position: relative;
+    z-index: 2;
+}

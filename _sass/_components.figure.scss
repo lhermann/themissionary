@@ -1,0 +1,47 @@
+/* ==========================================================================
+   #FIGURE
+   ========================================================================== */
+
+.c-figure {
+    margin-right: -$unit;
+    margin-left: -$unit;
+
+    @include mq($from: tablet) {
+        margin-right: -$unit-large;
+        margin-left: -$unit-large;
+    }
+
+    &--wide {
+        @include mq($from: tablet) {
+            margin-right: -$unit-huge;
+            margin-left: -$unit-huge;
+        }
+    }
+
+    &--right {
+
+        @include mq($from: tablet) {
+            float: right;
+            margin-left: $unit;
+            width: 50%;
+        }
+    }
+
+    &--left {
+
+        @include mq($from: tablet) {
+            float: left;
+            margin-right: $unit;
+            width: 50%;
+        }
+    }
+
+    &--round {
+        border-radius: $global-radius;
+    }
+
+    > .o-pack {
+        margin-left: -$unit-tiny;
+        width: calc(100% + #{$unit-small});
+    }
+}

@@ -1,0 +1,20 @@
+/* ==========================================================================
+   #SITE-FOOTER
+   ========================================================================== */
+
+.c-site-footer {
+    margin-top: $unit-large;
+    background-color: $c-primary;
+    padding: $unit-large 0;
+    color: $c-white;
+    font-size: 90%;
+
+    @include mq($from: tablet) {
+        margin-top: $unit-huge;
+    }
+}
+
+    .c-site-footer__nav,
+    .c-site-footer__social {
+        display: inline-block;
+    }

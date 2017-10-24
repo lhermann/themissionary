@@ -1,0 +1,86 @@
+/* ==========================================================================
+   #ICONS
+   ========================================================================== */
+
+@font-face {
+    font-family: "icomoon";
+    src: url("/assets/icomoon/fonts/icomoon.eot?kfrnip");
+    src: url("/assets/icomoon/fonts/icomoon.eot?kfrnip#iefix") format("embedded-opentype"),
+        url("/assets/icomoon/fonts/icomoon.ttf?kfrnip") format("truetype"),
+        url("/assets/icomoon/fonts/icomoon.woff?kfrnip") format("woff"),
+        url("/assets/icomoon/fonts/icomoon.svg?kfrnip#icomoon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.u-ic {
+    display: inline-block;
+    text-transform: none;
+    line-height: 1;
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: "icomoon" !important;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    speak: none;
+    vertical-align: -2px;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &--baseline {
+        vertical-align: baseline;
+    }
+
+    &--large {
+        transform: scale(1.2);
+    }
+
+    &--huge {
+        transform: scale(2);
+    }
+}
+
+.u-ic--phone:before {
+  content: "\e0cd";
+}
+.u-ic--check:before {
+  content: "\e5ca";
+}
+.u-ic--checkbox-checked:before {
+  content: "\e834";
+}
+.u-ic--checkbox:before {
+  content: "\e835";
+}
+.u-ic--close:before {
+  content: "\e5cd";
+}
+.u-ic--document:before {
+  content: "\e24d";
+}
+.u-ic--arrow-down:before {
+  content: "\e313";
+}
+.u-ic--arrow-left:before {
+  content: "\e314";
+}
+.u-ic--arrow-right:before {
+  content: "\e315";
+}
+.u-ic--arrow-up:before {
+  content: "\e316";
+}
+.u-ic--mail:before {
+  content: "\e0e1";
+}
+.u-ic--menu:before {
+  content: "\e5d2";
+}
+.u-ic--mobile-phone:before {
+  content: "\e325";
+}
+.u-ic--youtube:before {
+  content: "\ea9d";
+}

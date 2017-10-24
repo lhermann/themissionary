@@ -1,0 +1,69 @@
+/* ==========================================================================
+   #MOBILE-NAV
+   ========================================================================== */
+
+/**
+ * This class is applied to the html tag
+ *
+ * 1. disable scroll on main site when mobile-nav is open
+ */
+.is-mobile-nav-open {
+    &,
+    body {
+        overflow: hidden; /* [1] */
+    }
+}
+
+
+.c-mobile-nav {
+    position: absolute;
+    top: 0;
+    transition: opacity $global-transition;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1024;
+    background-color: rgba(#000, .85);
+    padding: $unit $unit-large $unit-large;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .is-mobile-nav-open & {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .admin-bar & {
+        margin-top: 46px !important;
+    }
+
+    /*
+     * Animation of list elements
+     */
+    li {
+        transform: translateY($unit);
+        opacity: 0;
+
+        .is-mobile-nav-open & {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
+
+/**
+ * List element animation
+ *
+ * 1. fade-in transition
+ */
+$delay-in: 0;
+
+@for $i from 1 through 5 {
+    .c-mobile-nav li:nth-child(#{$i}) {
+        transition: $global-transition #{$delay-in}s; /* [1] */
+    }
+
+    $delay-in: $delay-in + .05;
+}
+
