@@ -15,7 +15,12 @@ global $box;
             <?= wp_get_attachment_image( $box['image'], '360p', false, array( "class" => "u-1/1" ) ); ?>
         <?php endif; ?>
         <div class="o-box u-white">
-            <h2><?= $box['title'] ?></h2>
+            <h2>
+                <?php if($box['icon']): ?>
+                    <span class="fa <?= $box['icon'] ?>" aria-hidden="true"></span>
+                <?php endif; ?>
+                <?= $box['title'] ?>
+            </h2>
             <div>
                 <?= $box['content'] ?>
             </div>
