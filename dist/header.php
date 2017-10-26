@@ -82,4 +82,4 @@
     </header>
 
 
-    <div id="content" class="o-wrapper site-content u-mt+">
+    <div id="content" class="o-wrapper <?= is_front_page() ? 'o-wrapper--wide' : '' ?> site-content u-mt">

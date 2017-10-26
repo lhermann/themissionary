@@ -13,7 +13,7 @@
     <div class="o-flag__img c-excerpt__image <?= !has_post_thumbnail() ? 'u-pr0' : '' ?>">
         <?php if(has_post_thumbnail()): ?>
             <a href="<?= esc_url( get_permalink() ) ?>" rel="bookmark">
-                <?php the_post_thumbnail('90p') ?>
+                <?php the_post_thumbnail('180p') ?>
             </a>
         <?php endif; ?>
     </div>

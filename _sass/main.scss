@@ -193,17 +193,12 @@ figure {
 @import "../node_modules/inuitcss/objects/objects.pack";
 
 .o-wrapper--wide {
-    max-width: 1420px;
+    max-width: 1200px;
 }
 
 .o-wrapper--flush {
     padding-right: 0;
     padding-left: 0;
-}
-
-.o-box--round {
-    border-radius: $global-radius;
-    overflow: hidden;
 }
 
 .o-flag--responsive {
@@ -240,6 +235,7 @@ figure {
 @import "components.links";
 @import "components.featherlight";
 @import "components.avatar";
+@import "components.modules";
 
 .o-crop__content {
     max-height: 100%;
@@ -352,3 +348,4 @@ figure {
     position: relative;
     z-index: 2;
 }
+

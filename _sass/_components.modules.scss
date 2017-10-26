@@ -1,0 +1,24 @@
+/* ==========================================================================
+   #MODULES
+   ========================================================================== */
+
+.c-module {
+    border-radius: $global-radius;
+    position: relative;
+    transition: $global-transition;
+    color: $c-white;
+
+    &:hover {
+        box-shadow: 0 4px $unit-small rgba($c-black, .25);
+        transform: translateY(-2px);
+    }
+}
+
+    .c-module__link {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }

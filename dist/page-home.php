@@ -34,17 +34,15 @@ get_header(); ?>
 
                 </article><!-- #post-<?php the_ID(); ?> -->
 
-                <?php if( $boxes = get_field('boxes') ): ?>
+                <?php if( $modules = get_terms( array('taxonomy' => 'modules') ) ): ?>
 
                     <div class="o-layout o-layout--stretch u-mt+">
 
-                        <?php foreach($boxes as $key => $box): global $box; ?>
+                        <?php foreach($modules as $key => $module): global $module; ?>
 
-                            <?php $box['width'] = ($key == count($boxes)-1 && $key%2 == 0 ? 'u-1/1' : 'u-1/2') ?>
+                            <?php //$box['width'] = ($key == count($boxes)-1 && $key%2 == 0 ? 'u-1/1' : 'u-1/2') ?>
 
-                            <?php print_r($key); print_r(count($boxes)); ?>
-
-                            <?php get_template_part( 'template-parts/content', 'box' ); ?>
+                            <?php get_template_part( 'template-parts/content', 'module' ); ?>
 
                         <?php endforeach; ?>
 
