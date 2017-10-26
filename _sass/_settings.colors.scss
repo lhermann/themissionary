@@ -8,7 +8,7 @@ $c-primary:               #488c9f;
 $c-primary-lighter:       lighten($c-primary, 50%);
 $c-primary-darker:        darken($c-primary, 10%);
 
-$c-secondary:             #bf5761;
+$c-secondary:             #EDBF5C;
 $c-secondary-lighter:     lighten($c-secondary, 35%);
 $c-secondary-darker:      darken($c-secondary, 10%);
 
@@ -45,7 +45,7 @@ $c-black:       #000;
 
 /* Text colors */
 $c-text:                        #21272d;
-$c-textmuted:                   $c-gray-5;
+$c-textmuted:                   rgba($c-text, .6);
 $c-accent:                      $c-primary;
 $c-background:                  $c-gray-2;
 $c-border:                      $c-gray-3;

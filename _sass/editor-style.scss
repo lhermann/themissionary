@@ -116,7 +116,6 @@ $unit-huge:     $inuit-global-spacing-unit-huge;
 html {
     text-rendering: optimizelegibility;
     color: $c-text;
-    font-family: $font-body;
     -webkit-font-smoothing: antialiased;
 
     @include mq($until: tablet) {
@@ -125,11 +124,13 @@ html {
 }
 
 body {
-    overflow-x: hidden;
+    margin: $unit-tiny;
+    font-family: $font-body;
 }
 
 h1,
-h2 {
+h2,
+h3 {
     font-family: $font-headings;
 }
 
@@ -180,175 +181,107 @@ figure {
 // OBJECTS
 //
 // Uncomment and add to this section as necessary.
-@import "../node_modules/inuitcss/objects/objects.wrapper";
-@import "../node_modules/inuitcss/objects/objects.layout";
-@import "../node_modules/inuitcss/objects/objects.media";
-@import "../node_modules/inuitcss/objects/objects.flag";
-@import "../node_modules/inuitcss/objects/objects.list-bare";
-@import "../node_modules/inuitcss/objects/objects.list-inline";
-@import "../node_modules/inuitcss/objects/objects.box";
-@import "../node_modules/inuitcss/objects/objects.block";
-@import "../node_modules/inuitcss/objects/objects.ratio";
-@import "../node_modules/inuitcss/objects/objects.crop";
-@import "../node_modules/inuitcss/objects/objects.pack";
-
-.o-wrapper--wide {
-    max-width: 1420px;
-}
-
-.o-wrapper--flush {
-    padding-right: 0;
-    padding-left: 0;
-}
-
-.o-box--round {
-    border-radius: $global-radius;
-    overflow: hidden;
-}
-
-.o-flag--responsive {
-    .o-flag__img,
-    .o-flag__body {
-        @include mq($until: tablet) {
-            display: block;
-            margin-bottom: $unit-small;
-        }
-    }
-}
-
-// @include mq($until: tablet) {
-//     .o-layout--reverse\@mobile {
-//       direction: rtl;
-//     }
-// }
+// @import "../node_modules/inuitcss/objects/objects.wrapper";
+// @import "../node_modules/inuitcss/objects/objects.layout";
+// @import "../node_modules/inuitcss/objects/objects.media";
+// @import "../node_modules/inuitcss/objects/objects.flag";
+// @import "../node_modules/inuitcss/objects/objects.list-bare";
+// @import "../node_modules/inuitcss/objects/objects.list-inline";
+// @import "../node_modules/inuitcss/objects/objects.box";
+// @import "../node_modules/inuitcss/objects/objects.block";
+// @import "../node_modules/inuitcss/objects/objects.ratio";
+// @import "../node_modules/inuitcss/objects/objects.crop";
+// @import "../node_modules/inuitcss/objects/objects.pack";
 
 
 // COMPONENTS
 //
 // Build and include your project’s UI Compoments here.
-@import "components.wordpress";
-@import "components.site-nav";
-@import "components.site-cover";
-@import "components.site-footer";
-@import "components.nav-list";
-@import "components.mobile-nav";
-@import "components.article";
-@import "components.excerpt";
-@import "components.buttons";
-@import "components.figure";
-@import "components.category-list";
-@import "components.links";
-@import "components.featherlight";
-@import "components.avatar";
-
-.o-crop__content {
-    max-height: 100%;
-}
-
-.c-info {
-    background-color: $c-gray-1;
-    color: $c-gray-7;
-
-    &--primary {
-        background-color: $c-primary-lighter;
-        color: $c-primary-darker;
-    }
-
-    &--secondary {
-        background-color: $c-secondary-lighter;
-        color: $c-secondary-darker;
-    }
-
-    &--tertiary {
-        background-color: $c-tertiary-lighter;
-        color: $c-tertiary-darker;
-    }
-
-    &--black {
-        background-color: $c-gray-8;
-        color: $c-gray-2;
-    }
-}
-
-    .c-info__head {
-        border-bottom: 1px solid $c-white;
-    }
+// @import "components.wordpress";
+// @import "components.site-nav";
+// @import "components.site-cover";
+// @import "components.site-footer";
+// @import "components.nav-list";
+// @import "components.mobile-nav";
+// @import "components.article";
+// @import "components.buttons";
+// @import "components.figure";
+// @import "components.category-list";
+// @import "components.links";
+// @import "components.featherlight";
+// @import "components.avatar";
 
 
 
 // UTILITIES
-@import "../node_modules/inuitcss/utilities/utilities.clearfix";
-@import "../node_modules/inuitcss/utilities/utilities.widths";
-@import "../node_modules/inuitcss/utilities/utilities.headings";
-@import "utilities.responsive-spacings";
-@import "../node_modules/inuitcss/utilities/utilities.print";
-@import "utilities.orientation";
-@import "utilities.hide";
-// @import "utilities.icons";
-@import "utilities.text-align";
+// @import "../node_modules/inuitcss/utilities/utilities.clearfix";
+// @import "../node_modules/inuitcss/utilities/utilities.widths";
+// @import "../node_modules/inuitcss/utilities/utilities.headings";
+// @import "utilities.responsive-spacings";
+// @import "../node_modules/inuitcss/utilities/utilities.print";
+// @import "utilities.orientation";
+// @import "utilities.hide";
+// // @import "utilities.icons";
+// @import "utilities.text-align";
 
-[class*="fontawesome-"]:before {
-  font-family: 'FontAwesome', sans-serif;
-}
+// [class*="fontawesome-"]:before {
+//   font-family: 'FontAwesome', sans-serif;
+// }
 
-.u-text {
-    color: $c-text;
-}
+// .u-text {
+//     color: $c-text;
+// }
 
-.u-muted {
-    color: $c-textmuted;
-}
+// .u-muted {
+//     color: $c-textmuted;
+// }
 
-.u-white {
-    color: $c-white;
-}
+// .u-lead {
+//     font-size: 120%;
+// }
 
-.u-lead {
-    font-size: 120%;
-}
+// .u-thin {
+//     font-weight: 400;
+// }
 
-.u-thin {
-    font-weight: 400;
-}
+// .u-zoom {
+//     transition: transform $global-transition ease, box-shadow $global-transition ease;
+//     box-shadow: 0 0 #000;
+//     cursor: zoom-in;
 
-.u-zoom {
-    transition: transform $global-transition ease, box-shadow $global-transition ease;
-    box-shadow: 0 0 #000;
-    cursor: zoom-in;
+//     &.is-zoomed {
+//         transform: scale(1.3);
+//         box-shadow: $global-shadow;
+//         cursor: zoom-out;
+//     }
 
-    &.is-zoomed {
-        transform: scale(1.3);
-        box-shadow: $global-shadow;
-        cursor: zoom-out;
-    }
+//     &--2x.is-zoomed {
+//         transform: scale(2);
+//     }
 
-    &--2x.is-zoomed {
-        transform: scale(2);
-    }
+//     &--3x.is-zoomed {
+//         transform: scale(3);
+//     }
 
-    &--3x.is-zoomed {
-        transform: scale(3);
-    }
+//     &--right {
+//         transform-origin: center right;
+//     }
 
-    &--right {
-        transform-origin: center right;
-    }
+//     &--left {
+//         transform-origin: center left;
+//     }
+// }
 
-    &--left {
-        transform-origin: center left;
-    }
-}
+// .u-float-right {
+//     float: right;
+// }
 
-.u-float-right {
-    float: right;
-}
+// .u-z1 {
+//     position: relative;
+//     z-index: 1;
+// }
 
-.u-z1 {
-    position: relative;
-    z-index: 1;
-}
-
-.u-z2 {
-    position: relative;
-    z-index: 2;
-}
+// .u-z2 {
+//     position: relative;
+//     z-index: 2;
+// }

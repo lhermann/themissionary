@@ -1,0 +1,58 @@
+/* ==========================================================================
+   #ARTICLE
+   ========================================================================== */
+
+.c-excerpt {
+    position: relative;
+    padding: $unit;
+    margin: 0;
+    margin-left: -$unit;
+    transition: $global-transition background-color;
+
+    &:hover {
+        background-color: $c-secondary;
+    }
+
+    // &:not(:last-child) {
+    //     border-bottom: 1px solid $c-border;
+    // }
+
+    // &:hover {
+    //     border-color: transparent;
+    // }
+}
+
+    .c-excerpt__header {
+        color: $c-primary;
+
+        .c-excerpt:hover & {
+            color: $c-text;
+        }
+    }
+
+    .c-excerpt__body {
+        margin-bottom: $unit-small;
+
+        > p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .c-excerpt__footer {
+        color: $c-textmuted;
+        font-size: 80%;
+        display: inline-block;
+        white-space: nowrap;
+        position: relative;
+        z-index: 2;
+    }
+
+    .c-excerpt__link {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
