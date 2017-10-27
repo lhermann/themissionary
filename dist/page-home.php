@@ -21,9 +21,11 @@ get_header(); ?>
 
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                    <div class="o-ratio o-ratio--16:9 u-box-center u-mt" style="max-width: 800px;">
-                        <iframe src="https://www.youtube.com/embed/jOHcXb-X-vs" frameborder="0" gesture="media" allowfullscreen></iframe>
-                    </div>
+                    <?php if($video = get_field('video_url')): ?>
+                        <div class="o-ratio o-ratio--16:9 u-box-center u-mt" style="max-width: 800px;">
+                            <iframe src="<?= $video ?>" frameborder="0" gesture="media" allowfullscreen></iframe>
+                        </div>
+                    <?php endif; ?>
 
                     <div class="entry-content">
                         <?php
