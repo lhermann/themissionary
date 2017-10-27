@@ -12,15 +12,22 @@
 
     <header class="c-article__header">
 
-        <div class="u-hidden@from-tablet u-mt">
+        <div class="u-hidden@from-tablet u-mv">
             <a class="c-btn c-btn--small c-btn--secondary" href="<?= $_SERVER['HTTP_REFERER'] ?>">&lsaquo; Back</a>
         </div>
 
-        <h1 class="c-article__title u-mt u-mt0@tablet"><?php the_title(); ?></h1>
+        <?php if(has_term( '', 'modules', $post )):
+            foreach (get_the_terms( $post, 'modules' ) as $module): ?>
+                <a class="c-link c-link--primary" href="<?= get_term_link( $module ) ?>"><?= $module->name ?></a>
+                <?php //var_dump(get_the_terms( $post, 'modules' )); ?>
+            <?php endforeach;
+        endif; ?>
+
+        <h1 class="c-article__title u-mt-"><?php the_title(); ?></h1>
 
         <div class="c-article__meta u-mt-">
-            <address><?php the_author(); ?></address>
-            <br><time pubdate datetime="<?= get_the_date('Y-m-d') ?>"
+            <address><?php the_author(); ?></address>,
+            <time pubdate datetime="<?= get_the_date('Y-m-d') ?>"
                 title="<?= get_the_date() ?>">
                 <?= get_the_date() ?>
             </time>

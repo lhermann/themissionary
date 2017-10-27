@@ -145,9 +145,10 @@ a {
 }
 
 hr {
-    margin: $unit-large 0;
-    border: 0;
-    border-top: 1px solid #eee;
+    margin: $unit 0;
+    border-width: 0;
+    border-top: 1px solid $c-border;
+    background-color: transparent;
 }
 
 blockquote {
@@ -307,45 +308,12 @@ figure {
     font-weight: 400;
 }
 
-.u-zoom {
-    transition: transform $global-transition ease, box-shadow $global-transition ease;
-    box-shadow: 0 0 #000;
-    cursor: zoom-in;
-
-    &.is-zoomed {
-        transform: scale(1.3);
-        box-shadow: $global-shadow;
-        cursor: zoom-out;
-    }
-
-    &--2x.is-zoomed {
-        transform: scale(2);
-    }
-
-    &--3x.is-zoomed {
-        transform: scale(3);
-    }
-
-    &--right {
-        transform-origin: center right;
-    }
-
-    &--left {
-        transform-origin: center left;
-    }
-}
-
 .u-float-right {
     float: right;
 }
 
-.u-z1 {
-    position: relative;
-    z-index: 1;
-}
-
-.u-z2 {
-    position: relative;
-    z-index: 2;
+.u-box-center {
+    margin-left: auto;
+    margin-right: auto;
 }
 

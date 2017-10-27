@@ -811,9 +811,10 @@ a {
     color: #000; }
 
 hr {
-  margin: 54px 0;
-  border: 0;
-  border-top: 1px solid #eee; }
+  margin: 27px 0;
+  border-width: 0;
+  border-top: 1px solid #e8e8e8;
+  background-color: transparent; }
 
 blockquote {
   border-left: 5px solid #e8e8e8;
@@ -2419,15 +2420,17 @@ object {
     border-color: #fff; }
 
 .c-link--primary {
-  color: #21272d; }
+  color: #488c9f;
+  font-weight: 600; }
   .c-link--primary:active, .c-link--primary:hover {
-    background-color: #488c9f;
-    color: #fff; }
+    background-color: #f0f0f0;
+    color: #21272d; }
 
 .c-link--secondary {
-  color: #21272d; }
+  color: #EDBF5C; }
   .c-link--secondary:active, .c-link--secondary:hover {
-    background-color: #f0f0f0; }
+    background-color: #EDBF5C;
+    color: #fff; }
 
 .c-link--muted {
   color: rgba(33, 39, 45, 0.6); }
@@ -5220,42 +5223,9 @@ object {
 .u-thin {
   font-weight: 400; }
 
-.u-zoom {
-  -webkit-transition: -webkit-transform 0.2s ease, -webkit-box-shadow 0.2s ease;
-  transition: -webkit-transform 0.2s ease, -webkit-box-shadow 0.2s ease;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, -webkit-transform 0.2s ease, -webkit-box-shadow 0.2s ease;
-  -webkit-box-shadow: 0 0 #000;
-          box-shadow: 0 0 #000;
-  cursor: -webkit-zoom-in;
-  cursor: zoom-in; }
-  .u-zoom.is-zoomed {
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3);
-    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    cursor: -webkit-zoom-out;
-    cursor: zoom-out; }
-  .u-zoom--2x.is-zoomed {
-    -webkit-transform: scale(2);
-            transform: scale(2); }
-  .u-zoom--3x.is-zoomed {
-    -webkit-transform: scale(3);
-            transform: scale(3); }
-  .u-zoom--right {
-    -webkit-transform-origin: center right;
-            transform-origin: center right; }
-  .u-zoom--left {
-    -webkit-transform-origin: center left;
-            transform-origin: center left; }
-
 .u-float-right {
   float: right; }
 
-.u-z1 {
-  position: relative;
-  z-index: 1; }
-
-.u-z2 {
-  position: relative;
-  z-index: 2; }
+.u-box-center {
+  margin-left: auto;
+  margin-right: auto; }

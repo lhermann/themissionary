@@ -50,21 +50,23 @@
 }
 
 .c-link--primary {
-    color: $c-text;
+    color: $c-primary;
+    font-weight: 600;
 
     &:active,
     &:hover {
-        background-color: $c-accent;
-        color: $c-white;
+        background-color: $c-background;
+        color: $c-text;
     }
 }
 
 .c-link--secondary {
-    color: $c-text;
+    color: $c-secondary;
 
     &:active,
     &:hover {
-        background-color: $c-gray-2;
+        background-color: $c-secondary;
+        color: $c-white;
     }
 }
 
