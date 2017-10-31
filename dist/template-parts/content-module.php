@@ -11,7 +11,7 @@ global $module;
 
 <section class="o-layout__item <?= 'u-1/3' ?> u-mb">
 
-    <div class="o-box o-box--flush c-module u-1/1" style="background-color: <?= get_field('color', $module) ?>">
+    <div class="o-box o-box--flush c-module <?= $module->count ? 'c-module--active' : 'c-module--inactive' ?> u-1/1" style="background-color: <?= get_field('color', $module) ?>">
         <div class="o-box u-pb-">
             <h2>
                 <?php if($icon = get_field('icon', $module)): ?>
@@ -28,7 +28,9 @@ global $module;
                 <?= $module->description ?>
             </div>
         </div>
-        <a class="c-module__link" href="<?= get_term_link($module) ?>"></a>
+        <?php if($module->count): ?>
+            <a class="c-module__link" href="<?= get_term_link($module) ?>"></a>
+        <?php endif; ?>
     </div>
 
 </section>

@@ -43,7 +43,7 @@ get_header(); ?>
 
                 <hr>
 
-                <?php if( $modules = get_terms( array('taxonomy' => 'modules') ) ): ?>
+                <?php if( $modules = array_reverse( get_terms( array('taxonomy' => 'modules', 'hide_empty' => false) ) ) ): ?>
 
                     <div class="o-layout o-layout--stretch u-mt+">
 
