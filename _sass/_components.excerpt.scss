@@ -8,6 +8,7 @@
     margin: 0;
     margin-left: -$unit;
     transition: $global-transition background-color;
+    border-radius: $global-radius;
 
     &:hover {
         background-color: $c-secondary;
