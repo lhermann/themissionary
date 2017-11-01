@@ -37,6 +37,12 @@
 
     <section class="c-article__body">
 
+        <?php if($video = themissionary_youtube_url(get_field('video_url'))): ?>
+            <div class="o-ratio o-ratio--16:9 u-box-center u-mv" style="max-width: 800px;">
+                <iframe src="https://www.youtube.com/embed/<?= $video ?>?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allowfullscreen></iframe>
+            </div>
+        <?php endif; ?>
+
         <?php the_content(); ?>
 
         <div class="c-article__meta">

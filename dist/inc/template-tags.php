@@ -102,6 +102,14 @@ if ( ! function_exists( 'themissionary_entry_footer' ) ) :
 endif;
 
 
+function themissionary_youtube_url($url) {
+    $re = '/.*\/(?:watch\?v=)?(?<id>[a-zA-Z0-9-]*).*$/i';
+    $bool = preg_match($re, $url, $matches);
+    if($bool) return $matches['id'];
+    return $url;
+}
+
+
 /**
  * header class
  */

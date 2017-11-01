@@ -21,10 +21,9 @@ get_header(); ?>
 
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                    <?php if($video = get_field('video_url')):
-                        $video = explode('v=', $video)[1] ?: $video; ?>
+                    <?php if($video = themissionary_youtube_url(get_field('video_url'))): ?>
                         <div class="o-ratio o-ratio--16:9 u-box-center u-mt" style="max-width: 800px;">
-                            <iframe src="https://www.youtube.com/embed/<?= $video ?>" frameborder="0" gesture="media" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/<?= $video ?>?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allowfullscreen></iframe>
                         </div>
                     <?php endif; ?>
 
