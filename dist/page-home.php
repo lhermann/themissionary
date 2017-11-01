@@ -49,7 +49,7 @@ get_header(); ?>
 
                         <?php foreach($modules as $key => $module): global $module; ?>
 
-                            <?php //$box['width'] = ($key == count($boxes)-1 && $key%2 == 0 ? 'u-1/1' : 'u-1/2') ?>
+                            <?php if(get_field('visible', $module) === false) continue; ?>
 
                             <?php get_template_part( 'template-parts/content', 'module' ); ?>
 
