@@ -2714,8 +2714,8 @@ object {
   .c-module--active:hover {
     -webkit-box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-    -webkit-transform: translateY(-2px);
-            transform: translateY(-2px); }
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px); }
 
 .c-module__link {
   display: block;
