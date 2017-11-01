@@ -4,14 +4,15 @@
 
 .c-excerpt {
     position: relative;
-    padding: $unit;
+    transition: $global-transition background-color;
     margin: 0;
     margin-left: -$unit;
-    transition: $global-transition background-color;
     border-radius: $global-radius;
+    padding: $unit;
 
     &:hover {
-        background-color: $c-secondary;
+        background-color: var(--module-color, $c-tertiary);
+        color: $c-white;
     }
 
     // &:not(:last-child) {
@@ -24,10 +25,10 @@
 }
 
     .c-excerpt__header {
-        color: $c-primary;
+        color: var(--module-color, $c-primary);
 
         .c-excerpt:hover & {
-            color: $c-text;
+            color: $c-white;
         }
     }
 
@@ -40,20 +41,40 @@
     }
 
     .c-excerpt__footer {
-        color: $c-textmuted;
-        font-size: 80%;
         display: inline-block;
-        white-space: nowrap;
         position: relative;
         z-index: 2;
+        white-space: nowrap;
+        color: $c-textmuted;
+        font-size: 80%;
+
+        .c-excerpt:hover & {
+            color: $c-white;
+        }
     }
 
     .c-excerpt__link {
         display: block;
         position: absolute;
-        z-index: 1;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
+        z-index: 1;
+    }
+
+    .c-excerpt__number {
+        position: absolute;
+        top: 50%;
+        left: -#{$unit * 3};
+        margin-top: -.75em;
+        border-radius: 50%;
+        background-color: var(--module-color, $c-tertiary);
+        width: 1.5em;
+        height: 1.5em;
+        text-align: center;
+        line-height: 1.7em;
+        color: $c-white;
+        font-family: $font-headings;
+        font-size: 2em;
     }

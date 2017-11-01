@@ -2175,19 +2175,20 @@ object {
    ========================================================================== */
 .c-excerpt {
   position: relative;
-  padding: 27px;
-  margin: 0;
-  margin-left: -27px;
   -webkit-transition: 0.2s background-color;
   transition: 0.2s background-color;
-  border-radius: 15px; }
+  margin: 0;
+  margin-left: -27px;
+  border-radius: 15px;
+  padding: 27px; }
   .c-excerpt:hover {
-    background-color: #EDBF5C; }
+    background-color: var(--module-color, #C1565F);
+    color: #fff; }
 
 .c-excerpt__header {
-  color: #488c9f; }
+  color: var(--module-color, #488c9f); }
   .c-excerpt:hover .c-excerpt__header {
-    color: #21272d; }
+    color: #fff; }
 
 .c-excerpt__body {
   margin-bottom: 14px; }
@@ -2195,21 +2196,38 @@ object {
     margin-bottom: 0; }
 
 .c-excerpt__footer {
-  color: rgba(33, 39, 45, 0.6);
-  font-size: 80%;
   display: inline-block;
-  white-space: nowrap;
   position: relative;
-  z-index: 2; }
+  z-index: 2;
+  white-space: nowrap;
+  color: rgba(33, 39, 45, 0.6);
+  font-size: 80%; }
+  .c-excerpt:hover .c-excerpt__footer {
+    color: #fff; }
 
 .c-excerpt__link {
   display: block;
   position: absolute;
-  z-index: 1;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0; }
+  left: 0;
+  z-index: 1; }
+
+.c-excerpt__number {
+  position: absolute;
+  top: 50%;
+  left: -81px;
+  margin-top: -.75em;
+  border-radius: 50%;
+  background-color: var(--module-color, #C1565F);
+  width: 1.5em;
+  height: 1.5em;
+  text-align: center;
+  line-height: 1.7em;
+  color: #fff;
+  font-family: "Kalam", cursive;
+  font-size: 2em; }
 
 /* ==========================================================================
    #BUTTONS
@@ -2264,12 +2282,12 @@ object {
     background-color: #e8ad2e; }
 
 .c-btn--tertiary {
-  background-color: #439d7d; }
+  background-color: #C1565F; }
   .c-btn--tertiary, .c-btn--tertiary:hover, .c-btn--tertiary:active, .c-btn--tertiary:focus {
     text-decoration: none;
     color: #fff; }
   .c-btn--tertiary:hover, .c-btn--tertiary:focus {
-    background-color: #347961; }
+    background-color: #a73d46; }
 
 .c-btn--gray {
   background-color: #f0f0f0; }
@@ -2315,7 +2333,7 @@ object {
   .c-btn--ghost.c-btn--secondary {
     color: #e8ad2e; }
   .c-btn--ghost.c-btn--tertiary {
-    color: #347961; }
+    color: #a73d46; }
   .c-btn--ghost.c-btn--gray {
     color: #4d4d4d; }
   .c-btn--ghost.c-btn--white {
@@ -2720,8 +2738,8 @@ object {
     background-color: #fffefd;
     color: #e8ad2e; }
   .c-info--tertiary {
-    background-color: #cdeadf;
-    color: #347961; }
+    background-color: #faf3f3;
+    color: #a73d46; }
   .c-info--black {
     background-color: #333;
     color: #f0f0f0; }

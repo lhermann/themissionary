@@ -150,3 +150,15 @@ function themissionary_header_text() {
 
     return '';
 }
+
+
+function themissionary_module_color() {
+    global $wp_query;
+    if( is_module() ) {
+        return sprintf(
+            'style="--module-color: %s;"',
+            get_field('color', $wp_query->queried_object)
+        );
+    }
+    return '';
+}

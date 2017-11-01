@@ -8,7 +8,8 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('o-flag o-flag--responsive c-excerpt'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('o-flag o-flag--responsive c-excerpt'); ?> <?= themissionary_module_color() ?>>
+    <div class="c-excerpt__number"><?= $wp_query->current_post + 1 ?></div>
     <a class="c-excerpt__link" href="<?= esc_url(get_permalink()) ?>" rel="bookmark"></a>
     <div class="o-flag__img c-excerpt__image <?= !has_post_thumbnail() ? 'u-pr0' : '' ?>">
         <?php if(has_post_thumbnail()): ?>
