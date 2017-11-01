@@ -846,7 +846,7 @@ figure {
   padding-left: 27px;
   margin-right: auto;
   margin-left: auto;
-  max-width: 820px; }
+  max-width: 920px; }
   .o-wrapper:after {
     content: "" !important;
     display: block !important;
@@ -2178,9 +2178,11 @@ object {
   -webkit-transition: 0.2s background-color;
   transition: 0.2s background-color;
   margin: 0;
+  margin-bottom: 7px;
   margin-left: -27px;
   border-radius: 15px;
-  padding: 27px; }
+  padding: 27px;
+  width: calc(100% + 54px); }
   .c-excerpt:hover {
     background-color: var(--module-color, #C1565F);
     color: #fff; }

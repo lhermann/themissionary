@@ -6,9 +6,11 @@
     position: relative;
     transition: $global-transition background-color;
     margin: 0;
+    margin-bottom: $unit-tiny;
     margin-left: -$unit;
     border-radius: $global-radius;
     padding: $unit;
+    width: calc(100% + #{$unit-large});
 
     &:hover {
         background-color: var(--module-color, $c-tertiary);
