@@ -5,7 +5,7 @@
 .c-site-cover {
     position: relative;
     background-color: #333;
-    background-position: center top;
+    background-position: center center;
     background-size: cover;
     min-height: $unit * 8;
     font-size: 2.5vw;
@@ -40,6 +40,19 @@
     &--16\/9 {
         padding-top: 56.25%; // 16:9
     }
+
+    &--image-top {
+        background-position: center top;
+    }
+
+    &--image-bottom {
+        background-position: center bottom;
+    }
+
+    &--darken::after {
+        @include clothoid-gradient(#000, .60, .25);
+        max-height: 100%;
+    }
 }
 
     .c-site-cover__inner {
@@ -52,12 +65,16 @@
         background-color: rgba(0, 0, 0, .2);
         color: #fff;
 
-        @include mq($from: tablet) {
-            padding-bottom: 7vw;
-        }
+        // @include mq($from: tablet) {
+        //     padding-bottom: 7vw;
+        // }
 
         .c-site-cover--dark & {
             background-color: rgba(0, 0, 0, .55);
+        }
+
+        .c-site-cover--compact & {
+            display: none !important;
         }
     }
 

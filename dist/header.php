@@ -43,7 +43,7 @@
         ?>
     </nav>
 
-    <header class="c-site-cover <?= !is_front_page() ? 'c-site-cover--compact' : '' ?>" style="background-image:url(<?= get_template_directory_uri() ?>/img/header.jpg);">
+    <header class="c-site-cover <?= themissionary_header_class() ?>" style="background-image:url(<?= themissionary_header_image() ?>);">
 
         <nav id="navigation" class="c-site-nav">
             <?php
@@ -67,17 +67,11 @@
             </div>
         </nav>
 
-        <?php if(is_front_page()): ?>
         <div class="c-site-cover__inner u-orient-middle">
             <div class="o-wrapper u-text-center">
-                <h1 class="c-site-cover__title">
-                    <a class="c-site-cover__link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-                </h1>
-                <h3 class="c-site-cover__subtitle"><?php bloginfo( 'description', 'display' ) ?></h3>
-
+                <?= themissionary_header_text() ?>
             </div>
         </div>
-    <?php endif; ?>
 
     </header>
 

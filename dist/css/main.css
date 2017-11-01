@@ -1898,7 +1898,7 @@ object {
 .c-site-cover {
   position: relative;
   background-color: #333;
-  background-position: center top;
+  background-position: center center;
   background-size: cover;
   min-height: 216px;
   font-size: 2.5vw; }
@@ -1925,6 +1925,14 @@ object {
     padding-top: 17.14%; }
   .c-site-cover--16\/9 {
     padding-top: 56.25%; }
+  .c-site-cover--image-top {
+    background-position: center top; }
+  .c-site-cover--image-bottom {
+    background-position: center bottom; }
+  .c-site-cover--darken::after {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), color-stop(50%, rgba(0, 0, 0, 0.355)), color-stop(65%, rgba(0, 0, 0, 0.3025)), color-stop(75.5%, rgba(0, 0, 0, 0.27625)), color-stop(82.85%, rgba(0, 0, 0, 0.26295)), color-stop(88%, rgba(0, 0, 0, 0.25665)), to(rgba(0, 0, 0, 0.25)));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.355) 50%, rgba(0, 0, 0, 0.3025) 65%, rgba(0, 0, 0, 0.27625) 75.5%, rgba(0, 0, 0, 0.26295) 82.85%, rgba(0, 0, 0, 0.25665) 88%, rgba(0, 0, 0, 0.25) 100%);
+    max-height: 100%; }
 
 .c-site-cover__inner {
   position: absolute;
@@ -1935,11 +1943,10 @@ object {
   z-index: 3;
   background-color: rgba(0, 0, 0, 0.2);
   color: #fff; }
-  @media (min-width: 46.25em) {
-    .c-site-cover__inner {
-      padding-bottom: 7vw; } }
   .c-site-cover--dark .c-site-cover__inner {
     background-color: rgba(0, 0, 0, 0.55); }
+  .c-site-cover--compact .c-site-cover__inner {
+    display: none !important; }
 
 .c-site-cover__title {
   margin-bottom: 0;

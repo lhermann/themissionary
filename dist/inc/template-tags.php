@@ -100,3 +100,53 @@ if ( ! function_exists( 'themissionary_entry_footer' ) ) :
 		);
 	}
 endif;
+
+
+/**
+ * header class
+ */
+function themissionary_header_class($class = '') {
+    global $wp_query;
+    if( is_front_page() ) {
+        return $class;
+    } elseif ( is_module() ) {
+        return 'c-site-cover--darken ' . $class;
+    }
+    return 'c-site-cover--compact ' . $class;
+}
+
+
+/**
+ * header image
+ */
+function themissionary_header_image() {
+    global $wp_query;
+    $image = false;
+    if( is_module() ) {
+        $image = get_field('image', $wp_query->queried_object);
+        $image = wp_get_attachment_image_src( $image, '720p' )[0];
+    }
+    return $image ?: get_template_directory_uri() . '/img/header.jpg';
+}
+
+
+function themissionary_header_text() {
+    global $wp_query;
+
+    if( is_front_page() ) {
+        return sprintf(
+            '<h1 class="c-site-cover__title">%s</h1><h3 class="c-site-cover__subtitle">%s</h3>',
+            get_bloginfo( 'name' ),
+            get_bloginfo( 'description', 'display' )
+        );
+    } elseif ( is_module() ) {
+        $icon = get_field('icon', $wp_query->queried_object);
+        return sprintf(
+            '<h1 class="c-site-cover__title">%s%s</h1>',
+            $icon ? "<span class=\"fa $icon\" aria-hidden=\"true\"></span> " : "",
+            $wp_query->queried_object->name
+        );
+    }
+
+    return '';
+}

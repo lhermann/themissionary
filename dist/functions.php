@@ -240,3 +240,12 @@ function alter_archive_title( $title ) {
     return $title;
 }
 add_filter( 'get_the_archive_title', 'alter_archive_title' );
+
+
+/**
+ * Detect a module
+ */
+function is_module() {
+    global $wp_query;
+    return $wp_query->queried_object instanceof WP_Term && $wp_query->queried_object->taxonomy == 'modules';
+}
