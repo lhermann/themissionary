@@ -103,7 +103,7 @@ endif;
 
 
 function themissionary_youtube_url($url) {
-    $re = '/.*\/(?:watch\?v=)?(?<id>[a-zA-Z0-9-]*).*$/i';
+    $re = '/.*\/(?:watch\?v=)?(?<id>[^#\&\?]*).*$/i';
     $bool = preg_match($re, $url, $matches);
     if($bool) return $matches['id'];
     return $url;
