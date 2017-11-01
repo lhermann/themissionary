@@ -45,7 +45,7 @@ get_header(); ?>
 
                 <?php if( $modules = get_terms( array('taxonomy' => 'modules', 'hide_empty' => false, 'orderby' => 'slug') ) ): ?>
 
-                    <div class="o-layout o-layout--stretch u-mt+">
+                    <section id="modules" class="o-layout o-layout--stretch u-mt+">
 
                         <?php foreach($modules as $key => $module): global $module; ?>
 
@@ -55,7 +55,7 @@ get_header(); ?>
 
                         <?php endforeach; ?>
 
-                    </div>
+                    </section>
 
                 <?php endif; ?>
 
