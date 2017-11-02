@@ -249,3 +249,14 @@ function is_module() {
     global $wp_query;
     return $wp_query->queried_object instanceof WP_Term && $wp_query->queried_object->taxonomy == 'modules';
 }
+
+
+/**
+ * Reverse default post order
+ */
+function reverse_post_order( $query ) {
+    if( !is_admin() ) {
+        $query->set( 'order', 'ASC' );
+    }
+}
+add_action( 'pre_get_posts', 'reverse_post_order' );
