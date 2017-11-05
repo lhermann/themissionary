@@ -9,7 +9,7 @@
 global $module;
 ?>
 
-<article class="o-layout__item <?= 'u-1/3' ?> u-mb">
+<article class="o-layout__item u-1/3@tablet u-mb">
 
     <div class="o-box o-box--flush c-module <?= $module->count ? 'c-module--active' : 'c-module--inactive' ?> u-1/1" style="background-color: <?= get_field('color', $module) ?>">
         <div class="o-box u-pb-">
