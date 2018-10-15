@@ -15,6 +15,14 @@
     &:hover {
         background-color: var(--module-color, $c-tertiary);
         color: $c-white;
+
+        a {
+            color: rgba($c-white, 0.7);
+
+            &:hover {
+                color: rgba($c-black, 0.8);
+            }
+        }
     }
 
     // &:not(:last-child) {
