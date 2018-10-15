@@ -2,6 +2,44 @@
 //   #PODCAST PLAYER OVERWRITES
 //   ======================================================================== */
 
-.podcast_player {
-    box-shadow: 0 0 20px red;
+.ssp-player.ssp-player-large {
+    background-color: #fff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,.2);
+    // border: 1px solid #f0f0f0;
+    border-radius: 3px;
+
+    .ssp-player-title {
+        color: #666 !important;
+    }
+
+    .ssp-time-volume {
+        color: #999 !important;
+    }
+
+    .ssp-back-thirty-control,
+    .ssp-playback-speed-label-wrapper,
+    .ssp-download-control a {
+        color: #666 !important;
+
+        &:hover {
+            color: #333 !important;
+        }
+    }
+
+    .ssp-play-pause {
+        color: #3f9e7c !important;
+        cursor: pointer;
+
+        &:hover {
+            color: #458ca0 !important;
+        }
+    }
+
+    .ssp-wave > wave {
+        background-color: #eee !important;
+
+        > canvas {
+            opacity: 0.1;
+        }
+    }
 }
