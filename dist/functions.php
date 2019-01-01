@@ -7,7 +7,7 @@
  * @package The_Missionary
  */
 
-define('VERSION', '1.0.0-beta');
+define('VERSION', '1.0.1-beta');
 
 if ( ! function_exists( 'themissionary_setup' ) ) :
     /**
@@ -131,7 +131,7 @@ function themissionary_scripts() {
     wp_enqueue_style(
         'themissionary-style',
         get_template_directory_uri() . '/css/main.css',
-        array(), VERSION.rand() );
+        array(), VERSION );
 
     wp_enqueue_style(
         'themissionary-fonts',
@@ -142,9 +142,9 @@ function themissionary_scripts() {
         'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
 
     wp_enqueue_script(
-        'themissionary-bundlejs',
-        get_template_directory_uri() . '/js/bundle.js',
-        array('jquery'), VERSION.rand(), true );
+        'themissionary-js',
+        get_template_directory_uri() . '/js/main.js',
+        array('jquery'), VERSION, true );
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
