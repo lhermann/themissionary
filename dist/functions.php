@@ -259,4 +259,4 @@ function reverse_post_order( $query ) {
         $query->set( 'order', 'ASC' );
     }
 }
-add_action( 'pre_get_posts', 'reverse_post_order' );
+// add_action( 'pre_get_posts', 'reverse_post_order' );
