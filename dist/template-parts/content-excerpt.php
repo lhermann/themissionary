@@ -6,11 +6,14 @@
  *
  * @package The_Missionary
  */
-// var_dump($wp_query);
+
+$page = $paged = get_query_var('paged') ?: 1;
+$current_post = ($page - 1) * get_query_var('posts_per_page') + $wp_query->current_post;
+$number = ((int) $wp_query->found_posts) - $current_post;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('o-flag o-flag--responsive c-excerpt'); ?> <?= themissionary_module_color() ?>>
-    <div class="c-excerpt__number"><?= $wp_query->post_count - $wp_query->current_post ?></div>
+    <div class="c-excerpt__number"><?= $number ?></div>
     <a class="c-excerpt__link" href="<?= esc_url(get_permalink()) ?>" rel="bookmark"></a>
     <div class="o-flag__img c-excerpt__image <?= !has_post_thumbnail() ? 'u-pr0' : '' ?>">
         <?php if(has_post_thumbnail()): ?>

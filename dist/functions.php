@@ -7,7 +7,7 @@
  * @package The_Missionary
  */
 
-define('VERSION', '1.0.1-beta');
+define('VERSION', '1.1.0');
 
 if ( ! function_exists( 'themissionary_setup' ) ) :
     /**
